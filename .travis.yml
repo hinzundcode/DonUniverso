@@ -8,4 +8,4 @@ before_install:
 install:
   - ./travis/install.sh
 script:
-  - ./travis/build.sh
+  - travis_wait 60 ./travis/build.sh
