@@ -7,7 +7,7 @@ echo "start build"
 	-nographics \
 	-silent-crashes \
 	-logFile $(pwd)/unity.log \
-	-projectpath $(pwd) \
+	-projectpath $(pwd)/beansjam_unity \
 	-buildOSXUniversalPlayer "$(pwd)/DonUniverso.app" \
 	-quit
 
