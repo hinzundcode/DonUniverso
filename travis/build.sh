@@ -2,7 +2,7 @@
 
 echo "start build"
 
-/Applications/Unity/Unity.app/Contents/MacOS/Unity \
+travis_wait 60 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
 	-batchmode \
 	-nographics \
 	-silent-crashes \
