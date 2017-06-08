@@ -10,3 +10,5 @@ echo "start build"
 	-projectpath $(pwd)/beansjam_unity \
 	-buildOSXUniversalPlayer "$(pwd)/DonUniverso.app" \
 	-quit
+
+zip -r DonUniverso.app.zip DonUniverso.app
