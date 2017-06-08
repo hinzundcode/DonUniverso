@@ -8,7 +8,17 @@ echo "start build"
 	-silent-crashes \
 	-logFile \
 	-projectpath $(pwd)/beansjam_unity \
-	-buildOSXUniversalPlayer "$(pwd)/DonUniverso.app" \
+	-buildOSXUniversalPlayer "$(pwd)/build/mac/DonUniverso.app" \
 	-quit
 
-zip -r DonUniverso.app.zip DonUniverso.app
+/Applications/Unity/Unity.app/Contents/MacOS/Unity \
+	-batchmode \
+	-nographics \
+	-silent-crashes \
+	-logFile \
+	-projectpath $(pwd)/beansjam_unity \
+	-buildWindowsPlayer "$(pwd)/build/win/DonUniverso.exe" \
+	-quit
+
+zip -r DonUniversoMac.zip build/mac/
+zip -r DonUniversoWin.zip build/win/
