@@ -1,11 +1,19 @@
 language: objective-c
 osx_image: xcode8.1
 rvm:
-  - 2.2
+- 2.2
 before_install:
-  - chmod a+x ./travis/install.sh
-  - chmod a+x ./travis/build.sh
+- chmod a+x ./travis/install.sh
+- chmod a+x ./travis/build.sh
 install:
-  - ./travis/install.sh
+- ./travis/install.sh
 script:
-  - travis_wait 60 ./travis/build.sh
+- travis_wait 60 ./travis/build.sh
+deploy:
+  provider: releases
+  api_key:
+    secure: O1fT7EyiV7xoUBHGVrXaqCt9r0AqOSoI8aFG82eVnb2+uzv8Xm/TT7uvxhhNJg9mAWEoXkFkWR+FQm2mBP/xRYFP6qw5SHeBdAaMAmFp7uUQlyi5j5+R1m+MjtzPxeiGvjvCnVDGU4RzwfFn1DdDF/gp5B98McVjhCAehsaG0fCd2tBSbl+HeDfig903gAZbvdyBzcPowcqkzx07SG47pFEcmyHWlXlx1hVqOpyuJWqA9gZvyZ+WULDly/A0BBp28cjzcnkha6PscvQ579BaYOLp6FpNPrLdvVWBHlnexESX0j085OzSB6ZtzTWq0Mr+5s2Qhb/vW/gpTzSoi24dYzJkA2tcDJT1PD+/c8juQeRt4gY3oEqJn8PVadrZFuqgFijF6QvyfQ4nQOeyNWTDlpN4fzl5IpfxqrRIiVGXj4u4Xg06VTaHZ0t1G1OSRlD2lnifQr1NQ/lyr56VKY9PZXs2yne6ATSlMFHjYg63kX5x1mbwihtdfH4CcqrnZraC+2hJYHf6jWbP9OZ6FRsZ0Jt9ZocSUD92WUPQFdRvYmHuoZLC02uNw8j5aGoa1vstaeTmYLFaoOKs8UfK6VFoL8Au1PGUromCrMsvCD3qBL6InIIpdxaexVs2w8LYVzwuVudDIWgEoC8QnOwoNOYcTMxUWjXbDNo8bU7qTVn39mY=
+  file: DonUniverso.app
+  on:
+    repo: hinzundcode/DonUniverso
+    tags: true
