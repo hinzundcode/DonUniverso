@@ -20,5 +20,5 @@ echo "start build"
 	-buildWindowsPlayer "$(pwd)/build/win/DonUniverso.exe" \
 	-quit
 
-zip -rj DonUniversoMac.zip build/mac/
-zip -rj DonUniversoWin.zip build/win/
+(cd build/mac/; zip -e ../../DonUniversoMac.zip DonUniverso.app)
+(cd build/win/; zip -e ../../DonUniversoWin.zip .)
